@@ -336,3 +336,26 @@ requirement->test traceability discipline, n=1 - watch for a real MUST-slip to c
   SQLite test-DB missing content tables both blocked real verification). dalang already has
   E2E platform-tooling + bundled-sidecar prechecks; this is the broader "does it even run, with
   data?" gate. Confirm on a 2nd run before folding.
+
+- **A Phase-1 threat model can RE-SCOPE the slice, not only add MUSTs** *(Enkari Plan C; n=1).*
+  The safeguard panel may conclude the slice's **core approach** is unsafe and bounce all the way
+  back to re-defining what the slice *is* - not just appending T-numbered requirements. In Plan C
+  the panel found the planned containment (an agent with `acceptEdits` "isolated" on a git branch)
+  was not containment at all (a branch isolates the commit graph, not Bash/filesystem/network), and
+  the slice was re-scoped from "run the agent that edits" to a **read-only `plan`-mode MVP**, with
+  the dangerous write capability deferred to a *follow-up slice that re-runs the safeguard panel
+  first*. Treat such a re-scope as the threat-model gate **working**, record it as a Phase-1->
+  Architecture loop-back (human re-scope), and split rather than push the dangerous capability
+  through. *Already implied by "a threat model opens a new risk -> back to Architecture"; the new
+  nuance is that the right resolution is often a smaller, safer slice + a deferred one, not a pile
+  of mitigations bolted onto the original.* Promote on a 2nd run where a panel re-scopes a slice.
+
+- **Spike the real external contract before TDD-ing the parser** *(Enkari Plan C; n=1).* When a
+  slice integrates an external tool's stream/output (a CLI, an API), make the **first Build task a
+  SPIKE** that captures the *real* schema from the live tool and then TDD against captured fixtures -
+  never against an assumed shape. The Plan C spike of `claude --output-format stream-json` found
+  load-bearing surprises an assumed schema would have gotten wrong: huge hook-noise lines (validating
+  the parser's byte-cap), and the requested `--model` alias differing from the model actually billed
+  in the events (so the UI must read the model from the events, not assume the alias). A self-graded
+  parser built on guessed shapes is *necessary, not sufficient* - the captured fixture is the
+  validation. Confirm on a 2nd external-integration slice before folding.
