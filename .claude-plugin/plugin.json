@@ -1,0 +1,28 @@
+{
+  "name": "dalang",
+  "displayName": "Dalang",
+  "description": "Drive a feature slice from idea to release through six SDLC phases (Discovery -> Design -> Build -> QA -> Security -> Docs/Release) with iterative loop-backs and hard human commit gates. Honest by design: one model voices every business role in turn - not a team of independent reviewers. Experimental (v0.1.x). Invoked as /dalang:sdlc.",
+  "version": "0.1.0",
+  "author": {
+    "name": "ecowangsa",
+    "email": "ekodahni@gmail.com",
+    "url": "https://github.com/ecowangsa"
+  },
+  "homepage": "https://github.com/ecowangsa/dalang",
+  "repository": "https://github.com/ecowangsa/dalang",
+  "license": "MIT",
+  "keywords": [
+    "sdlc",
+    "phased-development",
+    "tdd",
+    "code-review",
+    "security-review",
+    "threat-model",
+    "qa",
+    "wayang",
+    "claude-code"
+  ],
+  "dependencies": [
+    "punakawan"
+  ]
+}

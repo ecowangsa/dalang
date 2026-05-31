@@ -1,0 +1,5 @@
+# Transient Playwright MCP session artifacts (E2E/DAST runs)
+.playwright-mcp/
+
+# Machine-local Claude Code settings (not for publication)
+.claude/settings.local.json

@@ -1,0 +1,20 @@
+{
+  "name": "wayang",
+  "description": "wayang - wayang-themed Claude Code plugins by ecowangsa. Hosts Dalang (a phased-SDLC executor) and Punakawan (an advisory panel). Dalang depends on Punakawan; installing dalang@wayang pulls punakawan automatically.",
+  "owner": {
+    "name": "ecowangsa",
+    "email": "ekodahni@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "dalang",
+      "source": "./",
+      "description": "Phased-SDLC executor: idea -> release across six phases (Discovery, Design, Build, QA, Security, Docs/Release) with iterative loop-backs and hard human commit gates. One model, many roles - honest by design, not a team of independent reviewers. Invoked as /dalang:sdlc. Experimental (v0.1.x)."
+    },
+    {
+      "name": "punakawan",
+      "source": { "source": "github", "repo": "ecowangsa/punakawan" },
+      "description": "Advisory panel: distinct wayang-character lenses debate a hard call and return one synthesized Semar verdict with a certainty band. Invoked as /punakawan:panel. (Dalang's Phase-0 contested-direction gate and Phase-1 threat model call it.)"
+    }
+  ]
+}
