@@ -216,7 +216,7 @@ identifier, compare mtimes, or rebuild). (field-notes: bundled-sidecar staleness
 **TW is opt-in and usually end-of-arc - offer it, don't auto-run it.** Documentation is
 typically written **once, after *all* modules' UAT** (not per slice), so **ask** rather than
 auto-produce: *"Produce the release/stakeholder doc now? It's usually done after the whole
-feature's UAT."* (Matches dalang's offer-first discipline - cf. the visual skin.) When accepted,
+feature's UAT."* (Matches dalang's offer-first discipline.) When accepted,
 the deliverable is the stakeholder/release doc (**distinct** from the markdown run-artifacts,
 which stay markdown), in the **project's delivery format - ask which** (markdown / .docx / other).
 For a **.docx (Word)** shop the bundled **`scripts/md2docx.py`** makes a *valid* `.docx` from a
@@ -300,20 +300,6 @@ row points to its defect ID. Format in `references/artifacts.md`.
   human gate precedes any commit, push, or deploy. A bad run is `git reset`-able.
 - **Scale to the change.** Use the lite lane for small fixes; reserve the full
   pipeline (E2E + pentest) for changes that warrant it.
-
-## Visual skin (extension - opt-in, downstream-only)
-
-A Scrum-style board + logical timeline that **replays an actual run**. It follows the
-exact discipline of punakawan's `index.html` visual sim:
-- **Opt-in, offered first, never auto-launched.**
-- **Downstream only** - it renders a run that already happened; it never influences
-  execution.
-- **Clearly labeled "simulation - not real time/sprints."** The timeline shows
-  logical beats (phase order, loop-backs), never wall-clock dates or sprint cadence.
-
-Model it on the punakawan transcript contract: a single generated JSON (phase log
-+ run-board + defects + loop-back log + traceability) rendered by one local HTML
-page, served on loopback, gitignored, with a baked-in sample fallback.
 
 ## Watch list (provisional - n=1, awaiting a 2nd confirmation)
 
